@@ -5,6 +5,8 @@ import ChiSiamo from './components/ChiSiamo'; // Importa il componente ChiSiamo
 import Galleria from './components/galleria'; // Importa il componente Galleria
 import TestimonialSlider from './components/testimonial'; // Importa il componente TestimonialSlider
 import MapWithOpeningHours from './components/MapWithOpeningHours'; // Importa il nuovo componente
+import OrariEContatti from './components/OrariEContatti'; // Aggiusta il percorso se necessario
+import Footer from './components/Footer'; // Aggiusta il percorso se necessario
 
 function App() {
   const location = { lat: 42.3601, lng: -71.0589 }; // Esempio di coordinate per la mappa
@@ -25,8 +27,11 @@ function App() {
       {/* Aggiungi qui il componente MapWithOpeningHours */}
       <MapWithOpeningHours location={location} openingHours={openingHours} />
       {/* Puoi continuare ad aggiungere altre sezioni o componenti qui... */}
+	   <OrariEContatti />
+	     <Footer />
     </div>
   );
 }
+
 
 export default App;

@@ -1,14 +1,25 @@
 // MapWithOpeningHours.jsx
-
-// Importazioni necessarie
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Typography, Box } from '@mui/material';
+import './MapWithOpeningHours.css'; // Assicurati che il percorso del file CSS sia corretto
 
-const MapWithOpeningHours = ({ location, openingHours }) => {
+const MapWithOpeningHours = ({ location }) => {
     return (
-        <div>
+        <Box>
+            {/* Sezione per le scritte animate */}
+            <Box sx={{ textAlign: 'center', my: 2 }}>
+                {/* Utilizzo di variant="h4" per "Dove Siamo" per adattarsi allo stile di "Il Ristorante" */}
+                <Typography variant="h4" align="center" gutterBottom className="animated-text">
+                    Dove Siamo
+                </Typography>
+                {/* Utilizzo di variant="h2" e stile personalizzato per "Vivi l'Esperienza" per adattarsi allo stile di "Dove il gusto è tradizione" */}
+                <Typography variant="h2" style={{ color: '#EDE0D6' }} align="center" gutterBottom className="animated-text">
+                    Vivi l'Esperienza
+                </Typography>
+            </Box>
+
             {/* Mappa Interattiva */}
             <MapContainer center={location} zoom={13} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
@@ -21,31 +32,7 @@ const MapWithOpeningHours = ({ location, openingHours }) => {
                     </Popup>
                 </Marker>
             </MapContainer>
-
-            {/* Tabella Orari e Date con Stile Personalizzato */}
-            <TableContainer component={Paper} sx={{ marginTop: '20px' }}>
-                <Table sx={{ minWidth: 650 }} aria-label="customized table">
-                    <TableHead sx={{ backgroundColor: 'primary.main', '& th': { color: 'common.white', fontWeight: 'bold' } }}>
-                        <TableRow>
-                            <TableCell>Data</TableCell>
-                            <TableCell>Ora di Apertura</TableCell>
-                            <TableCell>Ora di Chiusura</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {openingHours.map((entry, index) => (
-                            <TableRow key={index} sx={{ '&:nth-of-type(odd)': { backgroundColor: 'action.hover' } }}>
-                                <TableCell component="th" scope="row">
-                                    {entry.date}
-                                </TableCell>
-                                <TableCell>{entry.open}</TableCell>
-                                <TableCell>{entry.close}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+        </Box>
     );
 };
 
