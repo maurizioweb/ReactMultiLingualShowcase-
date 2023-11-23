@@ -43,10 +43,13 @@ const HeroSection = () => {
         justifyContent: 'center',
         alignItems: 'center',
         color: 'white',
-        backgroundColor: '#333',
+        backgroundImage: 'url(/immagine.jpg)', // Utilizzo dell'immagine di sfondo dalla cartella public
+        backgroundSize: 'cover', // Assicura che l'immagine copra l'intera area
+        backgroundPosition: 'center center', // Centra l'immagine
+        backgroundRepeat: 'no-repeat', // Impedisce la ripetizione dell'immagine
       }}
     >
-      <Container sx={{ textAlign: 'left' }}>
+      <Container sx={{ textAlign: 'left', backgroundColor: 'rgba(0, 0, 0, 0.0)' }}> {/* Aggiungi un overlay scuro per migliorare la leggibilità */}
         {/* Prima parola: "Vivi" */}
         <AnimatedTypography 
           variant="h2" 
@@ -104,4 +107,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

@@ -1,5 +1,5 @@
 // Header.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, Container, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -7,6 +7,11 @@ const menuItems = ['Chi siamo', 'ristorante', 'MENU', 'dicono di noi', 'dove sia
 
 const ResponsiveAppBar = () => {
   const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
+  const [headerStyle, setHeaderStyle] = useState({
+    background: 'transparent',
+    boxShadow: 'none',
+  });
+
   const isMobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
   const handleMobileMenuOpen = (event) => {
@@ -16,6 +21,28 @@ const ResponsiveAppBar = () => {
   const handleMobileMenuClose = () => {
     setMobileMenuAnchorEl(null);
   };
+
+  // Effetto per aggiornare lo stile dell'header al cambiare dello scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 100;
+      if (window.scrollY > scrollThreshold) {
+        setHeaderStyle({
+          background: '#333',
+          boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2)',
+        });
+      } else {
+        setHeaderStyle({
+          background: 'transparent',
+          boxShadow: 'none',
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const renderMobileMenu = (
     <Menu
@@ -41,7 +68,7 @@ const ResponsiveAppBar = () => {
   );
 
   return (
-    <AppBar position="fixed" style={{ background: 'transparent', boxShadow: 'none', zIndex: 1100 }}>
+    <AppBar position="fixed" style={headerStyle}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ height: '100px', justifyContent: 'space-between' }}>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex' }}>
@@ -88,7 +115,6 @@ const ResponsiveAppBar = () => {
                 border: '1px solid #EDE0D6', 
                 borderRadius: '20px', 
                 padding: '5px 15px'
-                // Nessun effetto di sottolineatura per "HOTEL"
               }}
             >
               {menuItems[menuItems.length - 1]}
