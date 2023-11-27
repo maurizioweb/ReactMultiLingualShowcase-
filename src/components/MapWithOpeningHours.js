@@ -7,7 +7,7 @@ import './MapWithOpeningHours.css'; // Assicurati che il percorso del file CSS s
 
 const MapWithOpeningHours = ({ location }) => {
     return (
-        <Box>
+        <Box id="dove-siamo">
             {/* Sezione per le scritte animate */}
             <Box sx={{ textAlign: 'center', my: 2 }}>
                 {/* Utilizzo di variant="h4" per "Dove Siamo" per adattarsi allo stile di "Il Ristorante" */}

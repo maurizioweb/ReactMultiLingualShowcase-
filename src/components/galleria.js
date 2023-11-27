@@ -10,7 +10,7 @@ const Galleria = () => {
   };
 
   return (
-    <Box sx={{ padding: '4rem 0', backgroundColor: '#f5f5f5' }}>
+    <Box id="galleria" sx={{ padding: '4rem 0', backgroundColor: '#f5f5f5' }}>
       <Container maxWidth="lg">
         <Typography variant="h4" align="center" gutterBottom>
           Il Ristorante

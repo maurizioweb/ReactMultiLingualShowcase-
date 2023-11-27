@@ -18,7 +18,7 @@ const TestimonialSlider = () => {
   ];
 
   return (
-    <div>
+    <div id="testimonianze">
       <h2 style={{
         textAlign: 'center',
         margin: '1rem 0' // Aggiungi margini secondo necessità

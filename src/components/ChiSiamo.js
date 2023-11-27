@@ -14,7 +14,7 @@ const ChiSiamo = () => {
   };
 
   return (
-    <Box sx={{ padding: '4rem 0', backgroundColor: '#f5f5f5' }}>
+    <Box  id="chi-siamo"sx={{ padding: '4rem 0', backgroundColor: '#f5f5f5' }}>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           {/* Colonna per titoli e immagine */}

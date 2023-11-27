@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, Container, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 const menuItems = ['Chi siamo', 'ristorante', 'MENU', 'dicono di noi', 'dove siamo', 'HOTEL'];
 
@@ -11,6 +12,7 @@ const ResponsiveAppBar = () => {
     background: 'transparent',
     boxShadow: 'none',
   });
+  const navigate = useNavigate(); // Crea un'istanza di useNavigate
 
   const isMobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
@@ -22,7 +24,38 @@ const ResponsiveAppBar = () => {
     setMobileMenuAnchorEl(null);
   };
 
-  // Effetto per aggiornare lo stile dell'header al cambiare dello scroll
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleMenuItemClick = (menuItem) => {
+    switch(menuItem.toLowerCase()) {
+      case 'chi siamo':
+        scrollToSection('chi-siamo');
+        break;
+      case 'ristorante':
+        scrollToSection('galleria');
+        break;
+      case 'dicono di noi':
+        scrollToSection('testimonianze');
+        break;
+      case 'dove siamo':
+        scrollToSection('dove-siamo');
+        break;
+      case 'menu':
+        navigate('/percorso-menu'); // Aggiorna con il percorso della tua pagina interna
+        break;
+      case 'hotel':
+        window.open('https://www.uliassi.com', '_blank'); // Sostituisci con il tuo URL esterno
+        break;
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollThreshold = 100;
@@ -60,7 +93,7 @@ const ResponsiveAppBar = () => {
       }}
     >
       {menuItems.map((menuItem, index) => (
-        <MenuItem key={index} onClick={handleMobileMenuClose} sx={{ color: 'white', backgroundColor: index === menuItems.length - 1 ? 'rgba(0, 0, 0, 0.2)' : 'inherit' }}>
+        <MenuItem key={index} onClick={() => handleMenuItemClick(menuItem)} sx={{ color: 'white', backgroundColor: index === menuItems.length - 1 ? 'rgba(0, 0, 0, 0.2)' : 'inherit' }}>
           {menuItem}
         </MenuItem>
       ))}
@@ -75,7 +108,7 @@ const ResponsiveAppBar = () => {
             <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px' }} />
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {menuItems.slice(0, -1).map((menuItem, index) => (
+            {menuItems.map((menuItem, index) => (
               <Button 
                 key={index} 
                 sx={{ 
@@ -100,25 +133,11 @@ const ResponsiveAppBar = () => {
                     width: '100%'
                   }
                 }}
+                onClick={() => handleMenuItemClick(menuItem)}
               >
                 {menuItem}
               </Button>
             ))}
-            <Button 
-              sx={{ 
-                my: 2, 
-                ml: 4, 
-                color: '#EDE0D6', 
-                display: 'block', 
-                textTransform: 'none', 
-                fontSize: '1.25rem', 
-                border: '1px solid #EDE0D6', 
-                borderRadius: '20px', 
-                padding: '5px 15px'
-              }}
-            >
-              {menuItems[menuItems.length - 1]}
-            </Button>
           </Box>
           <IconButton 
             size="large" 
