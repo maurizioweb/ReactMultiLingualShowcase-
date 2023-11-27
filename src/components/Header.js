@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, Container, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate, Link } from 'react-router-dom';
 
 const menuItems = ['Chi siamo', 'ristorante', 'MENU', 'dicono di noi', 'dove siamo', 'HOTEL'];
 
@@ -12,9 +12,7 @@ const ResponsiveAppBar = () => {
     background: 'transparent',
     boxShadow: 'none',
   });
-  const navigate = useNavigate(); // Crea un'istanza di useNavigate
-
-  const isMobileMenuOpen = Boolean(mobileMenuAnchorEl);
+  const navigate = useNavigate();
 
   const handleMobileMenuOpen = (event) => {
     setMobileMenuAnchorEl(event.currentTarget);
@@ -46,14 +44,15 @@ const ResponsiveAppBar = () => {
         scrollToSection('dove-siamo');
         break;
       case 'menu':
-        navigate('/nuova-pagina'); // Aggiorna con il percorso della tua pagina interna
+        navigate('/nuova-pagina');
         break;
       case 'hotel':
-        window.open('https://www.uliassi.com', '_blank'); // Sostituisci con il tuo URL esterno
+        window.open('https://www.uliassi.com', '_blank');
         break;
       default:
         break;
     }
+    handleMobileMenuClose();
   };
 
   useEffect(() => {
@@ -73,7 +72,6 @@ const ResponsiveAppBar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -82,18 +80,11 @@ const ResponsiveAppBar = () => {
       anchorEl={mobileMenuAnchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
+      open={Boolean(mobileMenuAnchorEl)}
       onClose={handleMobileMenuClose}
-      PaperProps={{
-        style: {
-          maxHeight: '100vh',
-          width: '100%',
-          backgroundColor: '#333',
-        },
-      }}
     >
       {menuItems.map((menuItem, index) => (
-        <MenuItem key={index} onClick={() => handleMenuItemClick(menuItem)} sx={{ color: 'white', backgroundColor: index === menuItems.length - 1 ? 'rgba(0, 0, 0, 0.2)' : 'inherit' }}>
+        <MenuItem key={index} onClick={() => handleMenuItemClick(menuItem)}>
           {menuItem}
         </MenuItem>
       ))}
@@ -105,7 +96,8 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ height: '100px', justifyContent: 'space-between' }}>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex' }}>
-            <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px' }} />
+             <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px',cursor: 'pointer' }} 
+			 onClick={() => window.location.reload()}/> 
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {menuItems.map((menuItem, index) => (
@@ -113,11 +105,10 @@ const ResponsiveAppBar = () => {
                 key={index} 
                 sx={{ 
                   my: 2, 
-                  color: '#EDE0D6', 
+                  color: 'white', 
                   display: 'block', 
                   textTransform: 'none', 
                   fontSize: '1.25rem',
-                  position: 'relative',
                   '&::after': {
                     content: '""',
                     position: 'absolute',
