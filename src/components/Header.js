@@ -46,7 +46,7 @@ const ResponsiveAppBar = () => {
         scrollToSection('dove-siamo');
         break;
       case 'menu':
-        navigate('/percorso-menu'); // Aggiorna con il percorso della tua pagina interna
+        navigate('/nuova-pagina'); // Aggiorna con il percorso della tua pagina interna
         break;
       case 'hotel':
         window.open('https://www.uliassi.com', '_blank'); // Sostituisci con il tuo URL esterno
