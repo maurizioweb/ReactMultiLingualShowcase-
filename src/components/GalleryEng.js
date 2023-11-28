@@ -8,10 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 const GalleriaEng = () => {
   const elements = [
-    "/restaurant.jpg", // Path to the real image
-    "/restaurant2.jpg", // Path to the real image
-    "/restaurant.jpg", // Path to the real image
-    "/restaurant2.jpg", // Path to the real image
+    "/ristorante.jpg", // Path to the real image
+    "/ristorante2.jpg", // Path to the real image
+    "/ristorante.jpg", // Path to the real image
+    "/ristorante2.jpg", // Path to the real image
     // Add as many placeholders as you want
   ];
 

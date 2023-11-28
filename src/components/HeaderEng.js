@@ -95,7 +95,7 @@ const ResponsiveAppBarEng = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ height: '100px', justifyContent: 'space-between' }}>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex' }}>
-            <img src="/Logo.png" alt="Logo" style={{ height: '64px', cursor: 'pointer' }} onClick={() => window.location.reload()}/>
+            <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px', cursor: 'pointer' }} onClick={() => window.location.reload()}/>
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {menuItemsEng.map((menuItem, index) => (
