@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 
 const OrariEContatti = () => {
   const orariApertura = [
@@ -13,15 +13,24 @@ const OrariEContatti = () => {
     { tipo: 'Email', valore: 'info@example.com' },
     // Aggiungi altri contatti...
   ];
-
+const headerStyle = {
+    color: '#F0821E', // Applicazione del colore rosso scuro
+  };
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} justifyContent="center">
+      {/* Intestazione sopra le tabelle */}
+      <Grid item xs={12}>
+        <Typography variant="h6" align="center" gutterBottom style={headerStyle}>
+          Orari e Contatti
+        </Typography>
+      </Grid>
+
       {/* Tabella Orari di Apertura */}
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6} style={{ maxWidth: '400px' }}>
         <TableContainer component={Paper} style={{ height: '100%' }}>
           <Table aria-label="Orari di apertura">
             <TableHead>
-              <TableRow>
+              <TableRow style={headerStyle}>
                 <TableCell>Giorno</TableCell>
                 <TableCell>Orario</TableCell>
               </TableRow>
@@ -39,11 +48,11 @@ const OrariEContatti = () => {
       </Grid>
 
       {/* Tabella Contatti */}
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6} style={{ maxWidth: '400px' }}>
         <TableContainer component={Paper} style={{ height: '100%' }}>
           <Table aria-label="Contatti">
             <TableHead>
-              <TableRow>
+              <TableRow style={headerStyle}>
                 <TableCell>Tipo</TableCell>
                 <TableCell>Valore</TableCell>
               </TableRow>
