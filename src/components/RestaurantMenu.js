@@ -5,71 +5,32 @@ const RestaurantMenu = () => {
 const [hoveredItem, setHoveredItem] = useState(null);
   const menuSections = [
     {
-      title: "I classici '23",
+      title: "Alla Carta",
       description: "Menu degustazione. €250. Bevande escluse.",
       note: "I menù degustazione per la loro complessità si intendono possibilmente per tutto il tavolo.",
       items: [
         { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
         { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
         { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
-        // Aggiungi qui altri piatti...
-      ],
-    },
-    // Aggiungi qui altre sezioni...
-	{
-      title: "Alla carta",
-      description: "Menu degustazione. €250. Bevande escluse.",
-      note: "I menù degustazione per la loro complessità si intendono possibilmente per tutto il tavolo.",
-      items: [
-        { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
+		 { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
+        { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
+        { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
+		 { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
+        { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
+        { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
+		 { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
         { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
         { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
         // Aggiungi qui altri piatti...
       ],
     },
-    // Aggiungi qui altre sezioni...
-	{
-      title: "I classici '23",
-      description: "Menu degustazione. €250. Bevande escluse.",
-      note: "I menù degustazione per la loro complessità si intendono possibilmente per tutto il tavolo.",
-      items: [
-        { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
-        { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
-        { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
-        // Aggiungi qui altri piatti...
-      ],
-    },
-    // Aggiungi qui altre sezioni...
-	{
-      title: "I classici easy",
-      description: "Menu degustazione. €250. Bevande escluse.",
-      note: "I menù degustazione per la loro complessità si intendono possibilmente per tutto il tavolo.",
-      items: [
-        { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
-        { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
-        { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
-        // Aggiungi qui altri piatti...
-      ],
-    },
-    // Aggiungi qui altre sezioni...
-	{
-      title: "Lab 23",
-      description: "Menu degustazione. €250. Bevande escluse.",
-      note: "I menù degustazione per la loro complessità si intendono possibilmente per tutto il tavolo.",
-      items: [
-        { name: "LOAKER DI FEGATO GRASSO E SHOT DI KIR ROYALE", detail: "" },
-        { name: "RICCI GHIACCIATI, MANDARINO, ZAFFERANELLA", detail: "" },
-        { name: "GAMBERO ROSSO, BUCCIA DI ARANCIO, ZENZERO, CERVELLA DI GAMBERO E CANNELLA", detail: "" },
-        // Aggiungi qui altri piatti...
-      ],
-    },
-    // Aggiungi qui altre sezioni...
+   
   ];
   
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto', my: 4 }}>
       {menuSections.map((section, sectionIndex) => (
-        <Paper key={sectionIndex} elevation={3} sx={{ my: 2, py: 3, px: 2 }}>
+        <Paper key={sectionIndex} elevation={3} sx={{ my: 2, py: 3, px: 2 }} id={section.title.replace(/\s+/g, '-').toLowerCase()}>
           <Typography variant="h2" component="h3" gutterBottom align="center">
             {section.title}
           </Typography>
