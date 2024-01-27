@@ -3,7 +3,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Button, Container, Menu, 
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 
-const menuItemsEng = ['WHO WE ARE', 'RESTAURANT', 'MENU', 'TESTIMONIALS', 'FIND US', 'HOTEL'];
+const menuItemsEng = ['Who We Are', 'Restaurant', 'MENU', 'Testimonials', 'Find Us', 'HOTEL'];
 
 const ResponsiveAppBarEng = () => {
   const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
