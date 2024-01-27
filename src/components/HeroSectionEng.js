@@ -1,4 +1,4 @@
-// Herosection.js
+// HeroSectionEng.js
 
 import React from 'react';
 import { Box, Container, Button } from '@mui/material';
@@ -18,7 +18,7 @@ const AnimatedBox = styled(Box)({
   }
 });
 
-const HeroSection = () => {
+const HeroSectionEng = () => {
   return (
     <Box
       sx={{
@@ -60,4 +60,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroSectionEng;

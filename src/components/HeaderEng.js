@@ -1,12 +1,11 @@
-// Header.js
 import React, { useState, useEffect } from 'react';
 import { AppBar, Box, Toolbar, IconButton, Typography, Button, Container, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const menuItems = ['CHI SIAMO', 'RISTORANTE', 'MENU', 'DICONO DI NOI', 'DOVE SIAMO', 'HOTEL'];
+const menuItemsEng = ['WHO WE ARE', 'RESTAURANT', 'MENU', 'TESTIMONIALS', 'FIND US', 'HOTEL'];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBarEng = () => {
   const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
   const [headerStyle, setHeaderStyle] = useState({
     background: 'transparent',
@@ -31,20 +30,20 @@ const ResponsiveAppBar = () => {
 
   const handleMenuItemClick = (menuItem) => {
     switch(menuItem.toLowerCase()) {
-      case 'chi siamo':
-        scrollToSection('chi-siamo');
+      case 'who we are':
+        scrollToSection('who-we-are');
         break;
-      case 'ristorante':
-        scrollToSection('galleria');
+      case 'restaurant':
+        scrollToSection('gallery');
         break;
-      case 'dicono di noi':
-        scrollToSection('testimonianze');
+      case 'testimonials':
+        scrollToSection('testimonials');
         break;
-      case 'dove siamo':
-        scrollToSection('dove-siamo');
+      case 'find us':
+        scrollToSection('find-us');
         break;
       case 'menu':
-        navigate('/nuova-pagina');
+        navigate('/new-page');
         break;
       case 'hotel':
         window.open('https://www.uliassi.com', '_blank');
@@ -83,7 +82,7 @@ const ResponsiveAppBar = () => {
       open={Boolean(mobileMenuAnchorEl)}
       onClose={handleMobileMenuClose}
     >
-      {menuItems.map((menuItem, index) => (
+      {menuItemsEng.map((menuItem, index) => (
         <MenuItem key={index} onClick={() => handleMenuItemClick(menuItem)}>
           {menuItem}
         </MenuItem>
@@ -96,41 +95,39 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ height: '100px', justifyContent: 'space-between' }}>
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex' }}>
-             <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px',cursor: 'pointer' }} 
-			 onClick={() => window.location.reload()}/> 
+            <img src="/Logotipo.png" alt="Logotipo" style={{ height: '64px', cursor: 'pointer' }} onClick={() => window.location.reload()}/>
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-  {menuItems.map((menuItem, index) => (
-    <Button 
-      key={index} 
-      sx={{ 
-        my: 2, 
-        color: menuItem === 'HOTEL' || menuItem === 'MENU' ? '#F0821E' : '#F5F5F5', // Condizione per il colore
-        display: 'block', 
-        textTransform: 'none', 
-        fontSize: '1.25rem',
-        fontFamily: 'Montserrat, sans-serif',
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          width: '0%',
-          height: '2px',
-          bottom: '-3px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: menuItem === 'HOTEL' || menuItem === 'MENU' ? '#F0821E' : '#282828', // Condizione per la linea sottostante al hover
-          transition: 'width 0.3s ease-in-out'
-        },
-        '&:hover::after': {
-          width: '100%'
-        }
-      }}
-      onClick={() => handleMenuItemClick(menuItem)}
-    >
-      {menuItem}
-    </Button>
-  ))}
-</Box>
+            {menuItemsEng.map((menuItem, index) => (
+              <Button 
+                key={index} 
+                sx={{ 
+                  my: 2, 
+                  color: 'white', 
+                  display: 'block', 
+                  textTransform: 'none', 
+                  fontSize: '1.25rem',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0%',
+                    height: '2px',
+                    bottom: '-3px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: '#FFF',
+                    transition: 'width 0.3s ease-in-out'
+                  },
+                  '&:hover::after': {
+                    width: '100%'
+                  }
+                }}
+                onClick={() => handleMenuItemClick(menuItem)}
+              >
+                {menuItem}
+              </Button>
+            ))}
+          </Box>
           <IconButton 
             size="large" 
             aria-label="menu" 
@@ -149,4 +146,4 @@ const ResponsiveAppBar = () => {
   );
 };
 
-export default ResponsiveAppBar;
+export default ResponsiveAppBarEng;

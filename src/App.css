@@ -1,6 +1,17 @@
 /* Importa gli stili di slick-carousel */
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+/* Definizione del Font Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url('./font/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Imposta Montserrat come font di default */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* Le tue regole CSS esistenti */
 .App {

@@ -1,19 +1,28 @@
 .footer {
-    background-color: #333;
+    background-color: #718872;
     color: white;
-    text-align: center;
     padding: 20px 0;
 }
 
 .footer .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Modificato per spaziare gli elementi */
     align-items: center;
     padding: 10px;
 }
 
-.footer .footer-section {
-    margin: 10px 0;
+.footer .footer-socials, .footer .footer-copy {
+    flex: 1; /* Aggiunto per permettere ai due div di espandersi equamente */
+}
+
+.footer .footer-socials {
+    text-align: left; /* Aggiunto per allineare le icone a sinistra */
+    display: flex; /* Per disporre le icone in linea */
+    gap: 10px; /* Spazio tra le icone */
+}
+
+.footer .footer-copy {
+    text-align: right; /* Aggiunto per allineare il testo del copyright a destra */
 }
 
 .footer a {

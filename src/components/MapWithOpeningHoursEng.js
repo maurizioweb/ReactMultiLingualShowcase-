@@ -1,22 +1,26 @@
-// MapWithOpeningHours.jsx
+// MapWithOpeningHoursEng.jsx
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Typography, Box } from '@mui/material';
 import './MapWithOpeningHours.css'; // Assicurati che il percorso del file CSS sia corretto
 
-const MapWithOpeningHours = ({ location }) => {
+const MapWithOpeningHoursEng = ({ location }) => {
     return (
-        <Box id="dove-siamo">
+        <Box id="find-us">
+            {/* Section for animated texts */}
             <Box sx={{ textAlign: 'center', my: 2 }}>
-                <Typography variant="h4" align="center" gutterBottom sx={{ fontFamily: 'Montserrat, sans-serif' }} className="animated-text">
-                    Dove Siamo
+                {/* Use variant="h4" for "Find Us" to match the style of "The Restaurant" */}
+                <Typography variant="h4" align="center" gutterBottom className="animated-text">
+                    Find Us
                 </Typography>
-                <Typography variant="h2" sx={{ color: '#EDE0D6', fontFamily: 'Montserrat, sans-serif' }} align="center" gutterBottom className="animated-text">
-                    Vivi l'Esperienza
+                {/* Use variant="h2" and custom style for "Experience It" to match the style of "Where Taste Meets Tradition" */}
+                <Typography variant="h2" style={{ color: '#EDE0D6' }} align="center" gutterBottom className="animated-text">
+                    Experience It
                 </Typography>
             </Box>
 
+            {/* Interactive Map */}
             <MapContainer center={location} zoom={13} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -24,7 +28,7 @@ const MapWithOpeningHours = ({ location }) => {
                 />
                 <Marker position={location}>
                     <Popup>
-                        Siamo qui!
+                        We are here!
                     </Popup>
                 </Marker>
             </MapContainer>
@@ -32,4 +36,4 @@ const MapWithOpeningHours = ({ location }) => {
     );
 };
 
-export default MapWithOpeningHours;
+export default MapWithOpeningHoursEng;
