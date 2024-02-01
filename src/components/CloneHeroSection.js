@@ -3,7 +3,7 @@
 import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
-
+import './fonts.css'; // Aggiusta il percorso in base alla tua struttura
 // Creazione di componenti con animazione
 const AnimatedTypography = styled(Typography)({
   animation: 'slideIn 0.5s ease forwards',
@@ -69,6 +69,7 @@ const CloneHeroSection = () => {
             fontStyle: 'italic',
             color: 'white',
 			textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+			fontFamily: 'HardItalic', // Usa il nome del font definito in @font-face
           }}
         >
           Gusto inconfondibile
@@ -82,9 +83,10 @@ const CloneHeroSection = () => {
             fontStyle: 'italic',
             color: 'white',
 			textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+			fontFamily: 'Montserrat, sans-serif',
           }}
         >
-          Dove Ogni Piatto Racconta una Storia
+          Dove ogni piatto racconta una storia
         </AnimatedTypography>
 
         <AnimatedBox>
@@ -95,7 +97,9 @@ const CloneHeroSection = () => {
               backgroundColor: '#718872',
               '&:hover': {
                 backgroundColor: '#5a6f5c'
-              }
+				
+              },
+			  fontFamily: 'Montserrat, sans-serif', 
             }}
 			href="#alla-carta" // Imposta l'href per puntare all'ID della sezione
           >
@@ -109,7 +113,8 @@ const CloneHeroSection = () => {
               '&:hover': {
                 backgroundColor: '#F0821E',
                 borderColor: '#F0821E',
-              }
+              },
+			  fontFamily: 'Montserrat, sans-serif', 
             }}
 			 
 component="a" // Aggiungi il componente "a" per creare un link

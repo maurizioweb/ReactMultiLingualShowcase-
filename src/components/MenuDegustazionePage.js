@@ -5,9 +5,9 @@ const MenuDegustazionePage = () => {
   return (
     <Container maxWidth="md">
       <Paper elevation={0} style={{ padding: '20px', marginTop: '80px' }}>
-        <Typography variant="h4" gutterBottom>Esplora il Nostro Esclusivo Menù Degustazione</Typography>
+        <Typography variant="h4" gutterBottom></Typography>
         <Typography paragraph>
-         un viaggio di sapori autentici, creati con maestria dal nostro chef: per un'esperienza culinaria personalizzata e memorabile."
+         
         </Typography>
         
       </Paper>

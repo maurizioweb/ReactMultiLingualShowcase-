@@ -47,7 +47,7 @@ const ResponsiveAppBar = () => {
         navigate('/nuova-pagina');
         break;
       case 'hotel':
-        window.open('https://www.uliassi.com', '_blank');
+        window.open('https://hoteldelsolepompei.it/', '_blank');
         break;
       default:
         break;

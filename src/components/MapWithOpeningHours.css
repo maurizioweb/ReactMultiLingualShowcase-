@@ -10,3 +10,68 @@
         transform: translateX(0);
     }
 }
+.leaflet-popup-content-wrapper {
+    background-color: #f5f5f5 !important; /* Sfondo del popup */
+    color: #333; /* Colore del testo */
+    border-radius: 8px; /* Angoli arrotondati */
+    padding: 10px; /* Spaziatura interna */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); /* Ombra del popup */
+}
+
+.leaflet-popup-content {
+    margin: 0; /* Rimuove margini aggiuntivi all'interno del popup */
+    font-size: 0.875rem; /* Dimensione del testo */
+}
+
+.custom-popup {
+    max-width: 200px; /* Larghezza massima del popup */
+}
+
+.custom-popup-link {
+    max-width: 250px; /* Larghezza massima del popup per il link */
+    text-align: center; /* Allinea il testo al centro */
+}
+.animated-text {
+    animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Stili per il Popup di Leaflet */
+.leaflet-popup-content-wrapper {
+    background-color: #f5f5f5 !important;
+    color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.custom-popup {
+    max-width: 200px;
+}
+
+.custom-popup-link {
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Stili aggiuntivi per il bottone */
+.custom-popup .leaflet-popup-button {
+    display: block; /* Assicura che il bottone occupi la sua propria riga */
+    margin-top: 10px; /* Distanza dal testo sopra */
+    text-transform: none; /* Rimuove la trasformazione del testo */
+    font-size: 0.875rem; /* Dimensione del testo del bottone */
+    /* Aggiungi altri stili per il bottone qui */
+}

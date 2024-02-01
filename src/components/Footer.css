@@ -33,3 +33,21 @@
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* Aggiunco qui le Media Queries per ottimizzare il layout su dispositivi mobili */
+@media (max-width: 600px) {
+    .footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .footer-socials, .footer .footer-copy {
+        text-align: center;
+        flex: none;
+        margin: 10px 0; /* Aggiungi margine per spaziare i contenuti */
+    }
+
+    .footer .footer-socials {
+        justify-content: center; /* Centra le icone social */
+    }
+}
