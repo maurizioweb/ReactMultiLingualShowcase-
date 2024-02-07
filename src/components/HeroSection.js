@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Container, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import './fonts.css'; // Assicurati che il percorso sia corretto
-import './reset.css'; // Assicurati che il percorso sia corretto
+
 
 // Creazione di componenti con animazione
 const AnimatedTypography = styled(Typography)(({ theme }) => ({
