@@ -105,7 +105,7 @@ const ResponsiveAppBar = () => {
       key={index} 
       sx={{ 
         my: 2, 
-        color: menuItem === 'HOTEL' || menuItem === 'MENU' ? '#F0821E' : '#F5F5F5', // Condizione per il colore
+        color: menuItem === 'HOTEL' || menuItem === 'MENU' ? '#F0821E' : '#808080', // Condizione per il colore
         display: 'block', 
         textTransform: 'none', 
         fontSize: '1.25rem',

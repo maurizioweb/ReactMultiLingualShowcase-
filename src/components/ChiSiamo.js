@@ -3,6 +3,7 @@ import { Box, Container, Typography, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import './fonts.css';
 
+
 const ChiSiamo = () => {
   const textAnimation = {
     hidden: { x: 100, opacity: 0 },
